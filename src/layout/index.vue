@@ -15,8 +15,8 @@
 <script  type="text/ecmascript-6">
 import LayoutHeader from "@/layout/header.vue"
 import LayoutMenu from "@/layout/menu.vue"
-import { layoutCenterNames } from "@/router"
-import { mapState } from "@/store/helper/music";
+// import { layoutCenterNames } from "@/router"
+// import { mapState } from "@/store/helper/music";
 export default {
    components: {
     LayoutHeader,LayoutMenu

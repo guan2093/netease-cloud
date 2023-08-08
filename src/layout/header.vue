@@ -25,11 +25,10 @@ import Search from "@/components/search"
 import RoutesHistory from "@/components/routes-history"
 import { mapState, mapMutations } from "@/store/helper/music";
 import { requestFullScreen, exitFullscreen, isFullscreen } from "@/utils"
-import { Icon } from "@/base/icon.vue";
 
 export default {
    components: {
-    Search, RoutesHistory, Theme, Icon
+    Search, RoutesHistory, Theme
    },
    data() {
      return {

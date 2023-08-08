@@ -18,11 +18,9 @@
 import { User } from "@/components/user.vue"
 import { mapState as mapUserState, mapGetters as mapUserGetters } from "@/store/helper/user";
 import { menuRoutes } from "@/router";
-import { Icon } from "element-ui";
 export default {
    components: {
-    User,
-    Icon
+    User
 },
    data() {
      return {
