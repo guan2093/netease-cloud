@@ -21,6 +21,6 @@ export function createSong(song){
     }
 }
 
-export function getArtistisText(artists){
+export function genArtistisText(artists){
     return (artists || []).map(({ name }) => name).join('/')
 }

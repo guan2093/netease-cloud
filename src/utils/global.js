@@ -10,6 +10,7 @@ import {
   Popover,
   Pagination,
 } from "element-ui"
+import * as utils from "./index"
 
 export default {
   install(Vue) {
@@ -28,6 +29,8 @@ export default {
     })
 
     Vue.prototype.$ELEMENT = { size: "small" }
+
+    Vue.prototype.$utils = utils
 
     Vue.use(Input)
     Vue.use(Carousel)

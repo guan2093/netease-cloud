@@ -33,3 +33,9 @@ export function exitFullscreen(){
 export function isFullscreen(){
     return document.fullscreen || document.mozFullScreen || document.webkitIsFullScreen
 }
+
+  export function isDef(v) {
+    return v !== undefined && v !== null
+  }
+  
+  
