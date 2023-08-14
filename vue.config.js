@@ -11,13 +11,13 @@ module.exports = {
       open: true,
       proxy: {
         "/netease-api": {
-          target: "http://localhost:3000",
-          pathRewrite: { "^/netease-api": "" },
+          target: "https://mu-api.yuk0.com",  //代理地址，这里设置的地址会代替axios中设置的baseURL
+          pathRewrite: { "^/netease-api": "" },  //pathRewrite: {'^/api': '/'} 重写之后url为 http://192.168.1.16:8085/xxxx
           changeOrigin: true,
-          secure: false,
         },
       },
-      port: 8888,
+      host:'localhost',
+      port: 8081
     },
     externals: isProd
       ? {

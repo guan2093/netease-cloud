@@ -1,9 +1,11 @@
-export * from './common'
+export * from "./common";
 
-export * from './business'
+export * from "./business";
 
-export * from './rem'
+export * from "./rem";
 
-export * from './axios'
+export * from "./axios";
 
-export * from './dom'
+export * from "./dom";
+
+export * from "./config";
