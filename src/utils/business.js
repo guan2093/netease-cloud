@@ -1,5 +1,5 @@
 import { getAlbum, GetMvDetail } from "@/api";
-import { router } from "@/router";
+import router from "@/router";
 import { isDef, notify } from "./common";
 
 export function createSong(song) {
