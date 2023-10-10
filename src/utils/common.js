@@ -51,3 +51,29 @@ export function notify(message, type) {
     return notify(message, key);
   };
 });
+
+export function shallowEqual(a, b, compareKey) {
+  if (a.length !== b.length) {
+    return false;
+  }
+  for (let i = 0; i < a.length; i++) {
+    let compareA = a[i];
+    let compareB = b[i];
+    if (compareKey) {
+      compareA = compareA[compareKey];
+      compareB = compareB[compareKey];
+    }
+    if (!Object.is(a[i], b[i])) {
+      return false;
+    }
+  }
+  return true;
+}
+
+export function genImgUrl(url, w, h) {
+  if (!h) {
+    h = w;
+  }
+  url += `?param=${w}y${h}`;
+  return url;
+}

@@ -1,65 +1,62 @@
 <template>
-   <div class="layout">
-    <LayoutHeader/>
-     <h1>Layout</h1>
-     <div class="layout-body">
-      <div class="layout-menu" v-show="isMenuShow">
-        <LayoutMenu/>
-      </div>
-      <div class="content" id="page-content">
-        <router-view :class="routerViewCls"/>
-      </div>
+  <div class="layout">
+   <LayoutHeader/>
+    <div class="layout-body">
+     <div class="layout-menu" v-show="isMenuShow">
+       <LayoutMenu/>
      </div>
-   </div>
+     <div class="content" id="page-content">
+       <router-view :class="routerViewCls"/>
+     </div>
+    </div>
+  </div>
 </template>
 <script  type="text/ecmascript-6">
 import LayoutHeader from "@/layout/header.vue"
 import LayoutMenu from "@/layout/menu.vue"
-// import { layoutCenterNames } from "@/router"
-// import { mapState } from "@/store/helper/music";
+import { layoutCenterNames } from "@/router"
+import { mapState } from "@/store/helper/music";
 export default {
-   components: {
-    LayoutHeader,LayoutMenu
-   },
-   data() {
-     return {
-      isMenuShow:true
-     }
-   },
-   computed: {
-    routerViewCls(){
+  components: {
+   LayoutHeader,LayoutMenu
+  },
+  data() {
+    return {
+    }
+  },
+  computed: {
+   routerViewCls(){
 
-      // return layoutCenterNames.find(name => name === this.$route.name) ? "router-view-center" : ""
-      return "router-view-center"
-    },
-    // ...mapState(["isMenuShow"])
-   }
+     return layoutCenterNames.find(name => name === this.$route.name) ? "router-view-center" : ""
+   },
+   ...mapState(["isMenuShow"])
+  }
 };
 </script>
 <style lang='scss' scoped>
 .layout {
-  height: 100%;
+ height: 100%;
 
-  .layout-body {
-    display: flex;
-    height: calc(100% - #{$header-height});
+ .layout-body {
+   display: flex;
+   height: calc(100% - #{$header-height});
 
-    .layout-menu {
-      // 这个100%已经减去了头部height
-      height: calc(100% - #{$mini-player-height});
-    }
+   .layout-menu {
+     // 这个100%已经减去了头部height
+     height: calc(100% - #{$mini-player-height});
+   }
 
-    .content {
-      flex: 1;
-      overflow-y: auto;
-      min-width: $layout-content-min-width;
-      margin-bottom: $mini-player-height;
+   .content {
+     flex: 1;
+     overflow-y: auto;
+     min-width: $layout-content-min-width;
+     margin-bottom: $mini-player-height;
 
-      .router-view-center {
-        max-width: $center-content-max-width;
-        margin: auto;
-      }
-    }
-  }
+     .router-view-center {
+       max-width: $center-content-max-width;
+       margin: auto;
+     }
+   }
+ }
 }
 </style>

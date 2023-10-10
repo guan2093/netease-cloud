@@ -6,7 +6,7 @@
          <p class="user-name">未登录</p>
       </div>
       <!-- 登录后 -->
-      <div @class="onLogout" class="logined-user" v-else>
+      <div @click="onLogout" class="logined-user" v-else>
          <img v-lazy="$utils.genImgUrl(user.avatarUrl, 80)" class="avatar" />
          <p class="user-name">{{ user.nickname }}</p>
       </div>
@@ -80,11 +80,12 @@ export default {
      onCloseModal(){
       this.visible = false
      },
-     onLogout(){
-      confirm("确定要注销吗?", () => {
-         this.logout()
-      })
-     },
+     onLogout() {
+      this.logout()
+      // confirm("确定要注销吗？", () => {
+        
+      // })
+    },
      ...mapUserActions(["login","logout"])
    }
 };
